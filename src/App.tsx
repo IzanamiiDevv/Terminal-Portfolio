@@ -10,7 +10,6 @@ function App() {
         setElements([]);
         return;
       }
-
       if (cmd.toLowerCase() == 'new') {
         setElements([...elements,(<>
         <h1>New Element</h1>
@@ -18,8 +17,6 @@ function App() {
         </>)]);
         return;
       }
-
-
       //Unknown Command Fallout
       setElements([...elements, (<p key={elements.length}>
         <span className="error">Error:</span> <span className="high">'{c}'</span> is not recognized as an internal or external command.
