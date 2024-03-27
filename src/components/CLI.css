@@ -5,6 +5,8 @@
     caret-color: white;
     color: white;
     font-size: 1rem;
+    overflow: visible;
+    width: 90%;
 }
 
 .cli h5 {

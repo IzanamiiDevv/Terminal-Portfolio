@@ -28,7 +28,21 @@ body {
   border-radius: 10px;
   background-color: #2e2b2b;
   padding: 20px 0px 0px 20px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scrollbar-color: red;
 }
+
+.Terminal::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+  background-color: transparent; /* Background color of the scrollbar track */
+}
+
+.Terminal::-webkit-scrollbar-thumb {
+  background-color: cadetblue; /* Color of the scrollbar thumb */
+  border-radius: 5px; /* Rounded corners of the scrollbar thumb */
+}
+
 
 .error {
   color: red;
