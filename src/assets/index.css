@@ -27,4 +27,15 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
   background-color: #2e2b2b;
+  padding: 20px 0px 0px 20px;
+}
+
+.error {
+  color: red;
+  font-weight: 500;
+}
+
+.high {
+  color: white;
+  font-weight: 250;
 }

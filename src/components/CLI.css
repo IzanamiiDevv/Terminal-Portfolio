@@ -1,0 +1,8 @@
+.cli input[type="text"] {
+    border:none;
+    outline: none;
+    background-color: transparent;
+    caret-color: white;
+    color: white;
+    font-size: 1rem;
+}
