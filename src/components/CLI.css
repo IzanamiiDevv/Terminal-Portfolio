@@ -9,8 +9,16 @@
     width: 90%;
 }
 
+.cli .display {
+    color: white;
+    font-size: 1rem;
+    font-weight: 200;
+    overflow: visible;
+    width: 90%;
+}
+
 .cli h5 {
-    color: aqua;
+    color: cadetblue;
 }
 
 .cli h5 span {

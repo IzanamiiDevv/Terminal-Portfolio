@@ -30,7 +30,6 @@ body {
   padding: 20px 0px 0px 20px;
   overflow-x: hidden;
   overflow-y: scroll;
-  scrollbar-color: red;
 }
 
 .Terminal::-webkit-scrollbar {
