@@ -6,3 +6,11 @@
     color: white;
     font-size: 1rem;
 }
+
+.cli h5 {
+    color: aqua;
+}
+
+.cli h5 span {
+    color: white;
+}
