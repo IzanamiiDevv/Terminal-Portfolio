@@ -29,6 +29,7 @@ function CommandLineInterFace(props:any) {
                 value={input}
                 id="inp"
                 ref={inputRef}
+                autoFocus
             />
         </div>
     )
