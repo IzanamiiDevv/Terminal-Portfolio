@@ -39,6 +39,9 @@ function Cls() {
     return (
         <div>
             <h3>CLS</h3>
+            <h4>This Command Allow You To Clear The Screen</h4>
+            <h5>Syntax: cls</h5>
+            <p>This Command is not Case Sensitive and it doesnt have any Properties</p>
         </div>
     )
 }
@@ -47,6 +50,9 @@ function New() {
     return (
         <div>
             <h3>NEW</h3>
+            <h4>This Command is used to Create an Element</h4>
+            <h5>Syntax: new</h5>
+            <p>This Command is not Case Sensitive and it doesnt have any Properties</p>
         </div>
     )
 }
@@ -55,6 +61,12 @@ function Echo() {
     return (
         <div>
             <h3>ECHO</h3>
+            <h4>This Command is used to Print the Given Text</h4>
+            <h5>Syntax: echo {"<text>"}</h5>
+            <p>This Command is not Case Sensitive.</p>
+            <h4>Property:</h4>
+            <p>The Text Property is Used to Handle The Input</p>
+            <p>Example usage: <b>echo Hello World!</b></p>
         </div>
     )
 }
@@ -63,6 +75,15 @@ function Cd() {
     return (
         <div>
             <h3>CD</h3>
+            <h4>Change Directory is Used to Navigate This Website</h4>
+            <h5>Syntax: cd {"<directory>"}</h5>
+            <p>This Command is not Case Sensitive.</p>
+            <h4>Property:</h4>
+            <p>Home</p>
+            <p>Skills</p>
+            <p>Contact</p>
+            <p>All of This Property Values is Not Case Sensitive.</p>
+            <p>Example usage: <b>cd Home</b></p>
         </div>
     )
 }
@@ -71,6 +92,17 @@ function HelpP() {
     return (
         <div>
             <h3>HELP</h3>
+            <h4>help command is used to learn Information about Certain Things</h4>
+            <h5>Syntax: cd {"<command>"}</h5>
+            <p>This Command is not Case Sensitive.</p>
+            <h4>Property:</h4>
+            <p>cls</p>
+            <p>new</p>
+            <p>echo</p>
+            <p>cd</p>
+            <p>help</p>
+            <p>All of This Property Values is Not Case Sensitive.</p>
+            <p>Example usage: <b>help echo</b></p>
         </div>
     )
 }
