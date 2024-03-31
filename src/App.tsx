@@ -83,7 +83,7 @@ function App() {
               <CLIDisplay text={cmd} location={location}/>
               <Contact.default/>
               <br />
-            </div>)])
+            </div>)]);
           })();
           return;
         }
