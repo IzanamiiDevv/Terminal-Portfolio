@@ -95,6 +95,7 @@ function App() {
         </div>)]);
         return;
       }
+      
       if (cmd.toLowerCase() == 'help') {
         setElements([...elements,(<div key={elements.length}>
         <CLIDisplay text={cmd} location={location}/>
