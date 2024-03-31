@@ -12,6 +12,7 @@ function App() {
     const runCommand = (cmd: string) => {
       if (cmd.toLowerCase() == 'cls') {
         setElements([]);
+        setLocation('Home')
         return;
       }
       if (cmd.toLowerCase() == 'new') {
@@ -62,27 +63,33 @@ function App() {
           return;
         }
         if(cmd.split(' ').slice(1).join(' ').toLowerCase() == 'skills'){
-          setElements([...elements, (<>
-          <CLIDisplay text={cmd} location={location}/>
-          <HomePage/>
-          <br />
-          </>)]);
           setLocation('Skills');
+          (async function() {
+            const Skills = await import('./components/Skills');
+            setElements([...elements, (<>
+              <CLIDisplay text={cmd} location={location}/>
+              <Skills.default/>
+              <br />
+            </>)]);
+          })();
           return;
         }
         if(cmd.split(' ').slice(1).join(' ').toLowerCase() == 'contact'){
-          setElements([...elements, (<>
-          <CLIDisplay text={cmd} location={location}/>
-          <HomePage/>
-          <br />
-          </>)]);
           setLocation('Contact');
+          (async function() {
+            const Contact = await import('./components/Contact');
+            setElements([...elements, (<>
+              <CLIDisplay text={cmd} location={location}/>
+              <Contact.default/>
+              <br />
+            </>)])
+          })();
           return;
         }
         setElements([...elements, (<>
           <CLIDisplay text={cmd} location={location}/>
           <p key={elements.length}>
-            <span className="error">Error:</span> Given Path Doesnt Exist!
+            <span className="error">Error:</span> Cant Find Given Directory
           </p>
           <br />
         </>)]);
