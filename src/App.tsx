@@ -7,6 +7,7 @@ import HomePage from "./components/Home";
 function App() {
   const [elements, setElements] = useState<JSX.Element[]>([]);
   const [ location , setLocation ] = useState('Home');
+  const [ focus , setFocus ] = useState(false);
 
   function test(c: string) {
     const runCommand = (cmd: string) => {
@@ -95,7 +96,7 @@ function App() {
         </div>)]);
         return;
       }
-      
+
       if (cmd.toLowerCase() == 'help') {
         setElements([...elements,(<div key={elements.length}>
         <CLIDisplay text={cmd} location={location}/>
@@ -120,13 +121,21 @@ function App() {
 
   return (
     <div>
-      <div className="Terminal">
+      <div className="Terminal" onClick={()=>{
+        console.log("Focuss");
+        setFocus(true)
+        setTimeout(() => {
+          console.log('Diko');
+          setFocus(false)
+
+        }, 1);
+      }}>
         <HomePage/>
         <br />
         {elements.map((element) => {
           return element;
         })}
-        <CommandLineInterFace key={0} command={test}  location={location}/>
+        <CommandLineInterFace key={0} command={test} location={location} focus={focus}/>
       </div>
     </div>
   );
