@@ -43,7 +43,7 @@ function App() {
         return;
       }
 
-      if(cmd.split(' ')[0] == 'cd'){
+      if(cmd.split(' ')[0].toLowerCase() == 'cd'){
         if(cmd.split(' ').length < 2){
           setElements([...elements, (<div key={elements.length}>
           <CLIDisplay text={cmd} location={location}/>
@@ -97,7 +97,73 @@ function App() {
         return;
       }
 
-      if (cmd.toLowerCase() == 'help') {
+      if (cmd.split(' ')[0].toLowerCase() == 'help') {
+        if(cmd.split(' ').length < 2){
+          (async function(){
+            const Help = await import('./components/Help')
+            setElements([...elements,(<div key={elements.length}>
+              <CLIDisplay text={cmd} location={location}/>
+              <Help.default/>
+              <br />
+            </div>)]);
+          })();
+          return;
+        }
+        if(cmd.split(' ').slice(1).join(' ').toLowerCase() == 'cls'){
+          (async function() {
+            const { Cls } = await import('./components/Help');
+            setElements([...elements, (<div key={elements.length}>
+              <CLIDisplay text={cmd} location={location}/>
+              <Cls/>
+              <br />
+            </div>)]);
+          })();
+          return;
+        }
+        if(cmd.split(' ').slice(1).join(' ').toLowerCase() == 'new'){
+          (async function() {
+            const { New } = await import('./components/Help');
+            setElements([...elements, (<div key={elements.length}>
+              <CLIDisplay text={cmd} location={location}/>
+              <New/>
+              <br />
+            </div>)]);
+          })();
+          return;
+        }
+        if(cmd.split(' ').slice(1).join(' ').toLowerCase() == 'echo'){
+          (async function() {
+            const { Echo } = await import('./components/Help');
+            setElements([...elements, (<div key={elements.length}>
+              <CLIDisplay text={cmd} location={location}/>
+              <Echo/>
+              <br />
+            </div>)]);
+          })();
+          return;
+        }
+        if(cmd.split(' ').slice(1).join(' ').toLowerCase() == 'cd'){
+          (async function() {
+            const { Cd } = await import('./components/Help');
+            setElements([...elements, (<div key={elements.length}>
+              <CLIDisplay text={cmd} location={location}/>
+              <Cd/>
+              <br />
+            </div>)]);
+          })();
+          return;
+        }
+        if(cmd.split(' ').slice(1).join(' ').toLowerCase() == 'help'){
+          (async function() {
+            const { HelpP } = await import('./components/Help');
+            setElements([...elements, (<div key={elements.length}>
+              <CLIDisplay text={cmd} location={location}/>
+              <HelpP/>
+              <br />
+            </div>)]);
+          })();
+          return;
+        }
         (async function(){
           const Help = await import('./components/Help')
           setElements([...elements,(<div key={elements.length}>

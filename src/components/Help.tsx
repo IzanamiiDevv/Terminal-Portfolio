@@ -34,3 +34,45 @@ function Help(){
 }
 
 export default Help;
+
+function Cls() {
+    return (
+        <div>
+            <h3>CLS</h3>
+        </div>
+    )
+}
+
+function New() {
+    return (
+        <div>
+            <h3>NEW</h3>
+        </div>
+    )
+}
+
+function Echo() {
+    return (
+        <div>
+            <h3>ECHO</h3>
+        </div>
+    )
+}
+
+function Cd() {
+    return (
+        <div>
+            <h3>CD</h3>
+        </div>
+    )
+}
+
+function HelpP() {
+    return (
+        <div>
+            <h3>HELP</h3>
+        </div>
+    )
+}
+
+export { Cls, New, Echo, Cd, HelpP };
