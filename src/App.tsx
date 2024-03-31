@@ -98,11 +98,14 @@ function App() {
       }
 
       if (cmd.toLowerCase() == 'help') {
-        setElements([...elements,(<div key={elements.length}>
-        <CLIDisplay text={cmd} location={location}/>
-        <h1>HELP</h1>
-        <br />
-        </div>)]);
+        (async function(){
+          const Help = await import('./components/Help')
+          setElements([...elements,(<div key={elements.length}>
+            <CLIDisplay text={cmd} location={location}/>
+            <Help.default/>
+            <br />
+          </div>)]);
+        })();
         return;
       }
       //Unknown Command Fallout
