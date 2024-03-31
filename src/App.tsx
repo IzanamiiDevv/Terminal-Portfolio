@@ -87,6 +87,18 @@ function App() {
           })();
           return;
         }
+        if(cmd.split(' ').slice(1).join(' ').toLowerCase() == 'about'){
+          setLocation('About');
+          (async function() {
+            const About = await import('./components/About');
+            setElements([...elements, (<div key={elements.length}>
+              <CLIDisplay text={cmd} location={location}/>
+              <About.default/>
+              <br />
+            </div>)]);
+          })();
+          return;
+        }
         setElements([...elements, (<div key={elements.length}>
           <CLIDisplay text={cmd} location={location}/>
           <p>
@@ -180,7 +192,7 @@ function App() {
       <p key={elements.length}>
         <span className="error">Error:</span> <span className="high">'{c}'</span> is not recognized as an internal or external command.
       </p>
-      <p>Use "<span className="high">help</span>" to see all commands</p>
+      <p>Type "<span className="high">help</span>" to see all commands</p>
       <br />
       </div>)]);
     };
