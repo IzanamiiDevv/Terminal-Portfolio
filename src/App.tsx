@@ -16,49 +16,49 @@ function App() {
         return;
       }
       if (cmd.toLowerCase() == 'new') {
-        setElements([...elements,(<>
+        setElements([...elements,(<div key={elements.length}>
         <CLIDisplay text={cmd} location={location}/>
-        <h1 key={elements.length}>New Element</h1>
+        <h1>New Element</h1>
         <br />
-        </>)]);
+        </div>)]);
         return;
       }
       if(cmd.split(' ')[0] == 'echo'){
         if(cmd.split(' ').length < 2){
-          setElements([...elements, (<>
+          setElements([...elements, (<div key={elements.length}>
           <CLIDisplay text={cmd} location={location}/>
-          <p key={elements.length}>
+          <p>
             <span className="error">Error:</span> Command Doesnt Have Any Parameter Applied to It
           </p>
           <br />
-          </>)]);
+          </div>)]);
           return;
         };
-        setElements([...elements,(<>
+        setElements([...elements,(<div key={elements.length}>
         <CLIDisplay text={cmd} location={location}/>
-        <p key={elements.length}>{cmd.split(' ').slice(1).join(' ')}</p>
+        <p>{cmd.split(' ').slice(1).join(' ')}</p>
         <br />
-        </>)]);
+        </div>)]);
         return;
       }
 
       if(cmd.split(' ')[0] == 'cd'){
         if(cmd.split(' ').length < 2){
-          setElements([...elements, (<>
+          setElements([...elements, (<div key={elements.length}>
           <CLIDisplay text={cmd} location={location}/>
-          <p key={elements.length}>
+          <p>
             <span className="error">Error:</span> Command Doesnt Have Any Parameter Applied to It
           </p>
           <br />
-          </>)]);
+          </div>)]);
           return;
         }
         if(cmd.split(' ').slice(1).join(' ').toLowerCase() == 'home'){
-          setElements([...elements, (<>
+          setElements([...elements, (<div key={elements.length}>
           <CLIDisplay text={cmd} location={location}/>
           <HomePage/>
           <br />
-          </>)]);
+          </div>)]);
           setLocation('Home');
           return;
         }
@@ -66,11 +66,11 @@ function App() {
           setLocation('Skills');
           (async function() {
             const Skills = await import('./components/Skills');
-            setElements([...elements, (<>
+            setElements([...elements, (<div key={elements.length}>
               <CLIDisplay text={cmd} location={location}/>
               <Skills.default/>
               <br />
-            </>)]);
+            </div>)]);
           })();
           return;
         }
@@ -78,32 +78,40 @@ function App() {
           setLocation('Contact');
           (async function() {
             const Contact = await import('./components/Contact');
-            setElements([...elements, (<>
+            setElements([...elements, (<div key={elements.length}>
               <CLIDisplay text={cmd} location={location}/>
               <Contact.default/>
               <br />
-            </>)])
+            </div>)])
           })();
           return;
         }
-        setElements([...elements, (<>
+        setElements([...elements, (<div key={elements.length}>
           <CLIDisplay text={cmd} location={location}/>
-          <p key={elements.length}>
+          <p>
             <span className="error">Error:</span> Cant Find Given Directory
           </p>
           <br />
-        </>)]);
+        </div>)]);
+        return;
+      }
+      if (cmd.toLowerCase() == 'help') {
+        setElements([...elements,(<div key={elements.length}>
+        <CLIDisplay text={cmd} location={location}/>
+        <h1>HELP</h1>
+        <br />
+        </div>)]);
         return;
       }
       //Unknown Command Fallout
-      setElements([...elements, (<>
+      setElements([...elements, (<div key={elements.length}>
       <CLIDisplay text={cmd} location={location}/>
       <p key={elements.length}>
         <span className="error">Error:</span> <span className="high">'{c}'</span> is not recognized as an internal or external command.
       </p>
       <p>Use "<span className="high">help</span>" to see all commands</p>
       <br />
-      </>)]);
+      </div>)]);
     };
 
     runCommand(c);
