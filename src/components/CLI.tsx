@@ -5,8 +5,8 @@ function CommandLineInterFace(props:any){
     const [input , setInput] = useState('')
     return (
         <div className="cli">
-            <h5>(<span>C:\root</span>)-[-]</h5>
-            <label form="inp">➜ </label>
+            <h5>╭─(<span>C:\root</span>)-[~]</h5>
+            <label form="inp">╰─➜ </label>
             <input type="text" onChange={(e)=>{
                 setInput(e.target.value);
             }} onKeyDown={(e)=>{
@@ -20,3 +20,6 @@ function CommandLineInterFace(props:any){
 }
 
 export default CommandLineInterFace;
+
+//╭─
+//╰─

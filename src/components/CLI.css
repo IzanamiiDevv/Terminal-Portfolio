@@ -24,3 +24,12 @@
 .cli h5 span {
     color: white;
 }
+
+.cli label {
+
+    color: cadetblue;
+}
+
+.cli p {
+    color: cadetblue;
+}
