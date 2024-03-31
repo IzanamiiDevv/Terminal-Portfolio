@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import CommandLineInterFace from "./components/CLI";
 import CLIDisplay from "./components/CLIDisplay";
 import HomePage from "./components/Home";
