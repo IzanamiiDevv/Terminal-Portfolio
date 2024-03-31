@@ -52,3 +52,9 @@ body {
   color: white;
   font-weight: 250;
 }
+
+@media (max-width:450px) {
+  *{
+    font-size: calc(1rem + 1.5px);
+  }
+}
